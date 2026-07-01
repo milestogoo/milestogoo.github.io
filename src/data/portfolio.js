@@ -5,6 +5,7 @@ export const profile = {
   bio: 'Engineering Director with 19+ years of experience building and scaling e-commerce technology platforms across Tesco, Ascena Retail Group, Condé Nast, and Target Corporation. Track record delivering enterprise digital transformation programs: architected golden-source data platforms that drove 20% revenue growth, led a Global Capability Center workforce migration with zero productivity loss, and reduced security incidents by 90%. Executive MBA from Olin Business School, Washington University in St. Louis, and IIT Bombay, combining business strategy with engineering leadership. Outside of the day job, I build AI-powered tools and full-stack side projects — from resume screening to survey generation to subscription tracking.',
   location: 'Bangalore, India',
   email: 'jesudasjj@gmail.com',
+  resumeUrl: `${import.meta.env.BASE_URL}resume.pdf`,
   socials: [
     { label: 'GitHub', href: 'https://github.com/milestogoo' },
     { label: 'LinkedIn', href: 'https://linkedin.com/in/jesudasjj' },
@@ -92,6 +93,8 @@ export const projects = [
       'AI-powered survey creation platform that generates engaging questionnaires in minutes, built on React, TypeScript, and Supabase.',
     tags: ['TypeScript', 'React', 'Supabase'],
     href: 'https://github.com/milestogoo/surveygeni',
+    featured: true,
+    gradient: 'from-violet-400 to-purple-600',
   },
   {
     title: 'ATS Resume Analyzer',
@@ -99,6 +102,8 @@ export const projects = [
       'AI-powered ATS compliance analyzer that parses PDF/DOC/DOCX resumes and scores them for keyword optimization and section-by-section formatting issues.',
     tags: ['Python', 'AI/LLM'],
     href: 'https://github.com/milestogoo/ats-resume-analyzer',
+    featured: true,
+    gradient: 'from-emerald-400 to-teal-600',
   },
   {
     title: 'GrammarHelper',
@@ -106,6 +111,8 @@ export const projects = [
       'Chrome extension that uses ChatGPT to give real-time grammar, spelling, and punctuation corrections as you type in any web text field, with token-saving optimizations.',
     tags: ['JavaScript', 'Chrome Extension', 'AI/LLM'],
     href: 'https://github.com/milestogoo/Free-grammerly',
+    featured: true,
+    gradient: 'from-amber-400 to-orange-600',
   },
   {
     title: 'HTML Live Page Editor',

@@ -2,16 +2,17 @@ import { profile } from '../data/portfolio'
 
 export default function Contact() {
   return (
-    <section id="contact" className="bg-gray-50 dark:bg-gray-900/40">
-      <div className="mx-auto max-w-4xl px-6 py-16 text-center">
-        <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">Get in touch</h2>
-        <p className="mx-auto mt-4 max-w-md text-gray-600 dark:text-gray-400">
-          Best way to reach me is email, or find me on the links below.
+    <section id="contact" className="bg-gradient-to-br from-purple-600 to-indigo-600">
+      <div className="mx-auto max-w-3xl px-6 py-16 text-center">
+        <h2 className="text-2xl font-bold text-white sm:text-3xl">Let's build something great together</h2>
+        <p className="mx-auto mt-3 max-w-md text-purple-100">
+          Open to conversations on engineering leadership, digital transformation, or the side
+          projects above. Best way to reach me is email.
         </p>
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
           <a
             href={`mailto:${profile.email}`}
-            className="rounded-md bg-indigo-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-indigo-500"
+            className="rounded-full bg-white px-6 py-2.5 text-sm font-medium text-purple-700 shadow-sm hover:bg-purple-50"
           >
             {profile.email}
           </a>
@@ -21,7 +22,7 @@ export default function Contact() {
               href={social.href}
               target="_blank"
               rel="noreferrer"
-              className="rounded-md border border-gray-300 px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-900"
+              className="rounded-full border border-white/60 px-6 py-2.5 text-sm font-medium text-white hover:bg-white/10"
             >
               {social.label}
             </a>
