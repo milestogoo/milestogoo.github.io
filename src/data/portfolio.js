@@ -11,15 +11,78 @@ export const profile = {
   ],
 }
 
-export const skills = [
-  'TypeScript',
-  'React',
-  'Python',
-  'Node.js',
-  'Supabase',
-  'Chrome Extensions',
-  'Tailwind CSS',
-  'n8n',
+export const interests = [
+  'Digital Transformation',
+  'E-Commerce Platforms',
+  'Cloud Strategy',
+  'Engineering Leadership',
+  'DevOps & Observability',
+  'Global Capability Centers',
+]
+
+export const education = [
+  {
+    degree: 'Executive MBA — Leadership, Digital Transformation and Cost Management',
+    school: 'Olin Business School, Washington University in St. Louis & IIT Bombay',
+    period: 'Joint Global Programme',
+  },
+]
+
+export const skillGroups = [
+  {
+    category: 'Engineering Leadership',
+    items: ['Engineering Leadership', 'P&L Management', 'Team Building', 'Stakeholder Management', 'GCC Leadership'],
+  },
+  {
+    category: 'Cloud & DevOps',
+    items: ['AWS', 'Azure', 'GCP', 'Docker', 'Kubernetes', 'CI/CD', 'New Relic', 'Datadog', 'Splunk'],
+  },
+  {
+    category: 'Full-Stack Development',
+    items: ['TypeScript', 'React', 'Python', 'Node.js', 'RESTful APIs', 'GraphQL', 'Supabase', 'Tailwind CSS'],
+  },
+]
+
+export const experience = [
+  {
+    role: 'Software Development Manager (Director-Level)',
+    company: 'Tesco Technology — India GCC',
+    period: 'January 2022 – Present',
+    bullets: [
+      "Own the engineering roadmap for Tesco's e-commerce data platform; delivered the \"One Data, One Source\" golden-source architecture across 8+ product lines, improving operational efficiency by 30% and contributing to a 20% increase in topline revenue.",
+      'Founded and led a Center of Excellence combining DevOps automation, observability (New Relic, Datadog, Splunk), and security governance, reducing security incidents by 90% and cutting third-party vendor costs by 10% within 18 months.',
+      'Built and retained a high-performance engineering organization of cross-functional squads; introduced structured career frameworks and data-driven 1:1s that improved retention by 65% and raised stakeholder NPS to 85%.',
+      'Led cloud-native migration and CI/CD maturity initiatives on AWS and GCP, enabling weekly release cadence in place of quarterly release trains and reducing deployment risk by more than half.',
+    ],
+  },
+  {
+    role: 'Engineering Manager',
+    company: 'Condé Nast',
+    period: 'April 2021 – October 2021',
+    bullets: [
+      'Optimized distributed systems architecture using microservices patterns and performance monitoring tools, increasing platform throughput by 25% for high-traffic digital publishing properties.',
+      'Directed an ISO 27001-aligned compliance and security upgrade program covering encryption, automated testing, and access governance; achieved zero audit findings on first external assessment.',
+    ],
+  },
+  {
+    role: 'Engineering Manager',
+    company: 'Ascena Retail Group',
+    period: 'March 2018 – April 2021',
+    bullets: [
+      'Led front-end engineering for 8 enterprise retail websites; standardized a React-based component library that cut development effort by 45% and reduced average delivery cycle from 6 weeks to 5 days.',
+      'Led migration of 70% of the engineering workforce from South America to India during a business crisis, achieving zero productivity loss, zero client escalations, and significant annualized cost reduction.',
+      'Conceived and delivered a hackathon-winning personalized coupon engine (React, RESTful APIs) that generated a 30% revenue uplift and was fast-tracked to production within 60 days.',
+      'Reduced operational costs by 30% and improved team retention by 30% through Scrum maturity initiatives, workforce planning tools, and structured performance review cycles.',
+    ],
+  },
+  {
+    role: 'UI Technical Lead',
+    company: 'Target Corporation',
+    period: 'February 2015 – March 2018',
+    bullets: [
+      'Accelerated feature delivery by 20% and reduced release cycles by 30% by introducing Agile project governance (Jira, Confluence) and continuous integration practices across 4 engineering squads.',
+    ],
+  },
 ]
 
 export const projects = [
