@@ -1,14 +1,13 @@
 export const profile = {
-  name: 'Jane Doe',
-  role: 'Full-Stack & AI Product Builder',
-  tagline: 'I build AI-powered tools and full-stack apps, from idea to shipped product.',
-  bio: "I'm a full-stack developer who builds AI-powered tools and internal apps end to end — from React/TypeScript frontends to Node/Python backends and browser extensions. Most of my recent work leans on LLMs to automate real workflows: resume screening, grammar correction, survey generation, and subscription tracking.",
-  location: 'Remote',
-  email: 'jane.doe@example.com',
+  name: 'Jesudas Antonyraj',
+  role: 'Director of Engineering',
+  tagline: 'Digital Transformation | E-Commerce & Cloud — 19+ years scaling engineering orgs at Tesco, Condé Nast, Ascena, and Target.',
+  bio: 'Engineering Director with 19+ years of experience building and scaling e-commerce technology platforms across Tesco, Ascena Retail Group, Condé Nast, and Target Corporation. Track record delivering enterprise digital transformation programs: architected golden-source data platforms that drove 20% revenue growth, led a Global Capability Center workforce migration with zero productivity loss, and reduced security incidents by 90%. Executive MBA from Olin Business School, Washington University in St. Louis, and IIT Bombay, combining business strategy with engineering leadership. Outside of the day job, I build AI-powered tools and full-stack side projects — from resume screening to survey generation to subscription tracking.',
+  location: 'Bangalore, India',
+  email: 'jesudasjj@gmail.com',
   socials: [
     { label: 'GitHub', href: 'https://github.com/milestogoo' },
-    { label: 'LinkedIn', href: 'https://linkedin.com/in/yourusername' },
-    { label: 'X', href: 'https://x.com/yourusername' },
+    { label: 'LinkedIn', href: 'https://linkedin.com/in/jesudasjj' },
   ],
 }
 
