@@ -52,6 +52,6 @@ export async function publishContent(content, token) {
   return putFile('public/content.json', base64, 'Update portfolio content via in-page editor', token)
 }
 
-export async function publishAvatar(base64ImageContent, token) {
-  return putFile('public/avatar.jpg', base64ImageContent, 'Update portfolio photo via in-page editor', token)
+export async function publishImage(path, base64ImageContent, token) {
+  return putFile(path, base64ImageContent, `Update ${path} via in-page editor`, token)
 }

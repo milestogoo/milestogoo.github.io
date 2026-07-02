@@ -23,7 +23,7 @@ function SectionHeading({ icon: Icon, children }) {
 }
 
 export default function Hero() {
-  const { content, editMode, avatarFile, pickAvatarFile } = useContent()
+  const { content, editMode, getImagePreview, pickImage } = useContent()
   const { profile, interests, education } = content
   const fileInputRef = useRef(null)
 
@@ -33,7 +33,7 @@ export default function Hero() {
     .join('')
 
   const avatarSrc =
-    avatarFile?.previewUrl ||
+    getImagePreview('avatar') ||
     (profile.avatarVersion > 0
       ? `${import.meta.env.BASE_URL}avatar.jpg?v=${profile.avatarVersion}`
       : null)
@@ -64,7 +64,7 @@ export default function Hero() {
                   type="file"
                   accept="image/*"
                   className="hidden"
-                  onChange={(e) => e.target.files[0] && pickAvatarFile(e.target.files[0])}
+                  onChange={(e) => e.target.files[0] && pickImage('avatar', e.target.files[0])}
                 />
                 <button
                   onClick={() => fileInputRef.current.click()}

@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import { getByPath, setByPath, deepClone } from '../lib/pathUtils'
-import { publishContent, publishAvatar } from '../lib/githubPublish'
+import { publishContent, publishImage } from '../lib/githubPublish'
 import defaultContent from '../data/content.json'
 
 const Ctx = createContext(null)
@@ -15,7 +15,7 @@ export function ContentProvider({ children }) {
 
   const [content, setContent] = useState(defaultContent)
   const [dirty, setDirty] = useState(false)
-  const [avatarFile, setAvatarFile] = useState(null) // { base64, previewUrl }
+  const [pendingImages, setPendingImages] = useState({}) // key -> { base64, previewUrl }
   const [publishState, setPublishState] = useState('idle') // idle | publishing | success | error
   const [publishError, setPublishError] = useState('')
 
@@ -37,15 +37,19 @@ export function ContentProvider({ children }) {
     setDirty(true)
   }
 
-  function pickAvatarFile(file) {
+  function pickImage(key, file) {
     const reader = new FileReader()
     reader.onload = () => {
       const dataUrl = reader.result
       const base64 = dataUrl.split(',')[1]
-      setAvatarFile({ base64, previewUrl: dataUrl })
+      setPendingImages((prev) => ({ ...prev, [key]: { base64, previewUrl: dataUrl } }))
       setDirty(true)
     }
     reader.readAsDataURL(file)
+  }
+
+  function getImagePreview(key) {
+    return pendingImages[key]?.previewUrl
   }
 
   function getToken() {
@@ -66,13 +70,20 @@ export function ContentProvider({ children }) {
     setPublishError('')
     try {
       const next = deepClone(content)
-      if (avatarFile) {
-        await publishAvatar(avatarFile.base64, token)
-        next.profile.avatarVersion = (next.profile.avatarVersion || 0) + 1
+      for (const [key, img] of Object.entries(pendingImages)) {
+        if (key === 'avatar') {
+          await publishImage('public/avatar.jpg', img.base64, token)
+          next.profile.avatarVersion = (next.profile.avatarVersion || 0) + 1
+        } else if (key.startsWith('article:')) {
+          const id = key.slice('article:'.length)
+          await publishImage(`public/articles/${id}.jpg`, img.base64, token)
+          const article = next.articles.find((a) => a.id === id)
+          if (article) article.imageVersion = (article.imageVersion || 0) + 1
+        }
       }
       await publishContent(next, token)
       setContent(next)
-      setAvatarFile(null)
+      setPendingImages({})
       setDirty(false)
       setPublishState('success')
     } catch (err) {
@@ -91,8 +102,8 @@ export function ContentProvider({ children }) {
     dirty,
     updateField,
     getValue,
-    avatarFile,
-    pickAvatarFile,
+    pickImage,
+    getImagePreview,
     publish,
     publishState,
     publishError,

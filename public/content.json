@@ -168,5 +168,29 @@
       "tags": ["TypeScript", "React"],
       "href": "https://github.com/milestogoo/plec"
     }
+  ],
+  "articles": [
+    {
+      "id": "golden-source-data-platform",
+      "title": "Building a Golden-Source Data Platform",
+      "excerpt": "How we unified fragmented e-commerce data into a single source of truth — and what it took to get engineering and business aligned.",
+      "date": "2026-01-15",
+      "readTime": "5 min read",
+      "tags": ["Data Platforms", "Case Study"],
+      "imageVersion": 0,
+      "gradient": "from-violet-400 to-purple-600",
+      "body": "Replace this with your own write-up. Describe the problem, the approach you took, and the outcome — this is a great place to share the story behind an initiative from your Experience section above."
+    },
+    {
+      "id": "leading-through-gcc-migration",
+      "title": "Leading a Team Through a Global Capability Center Migration",
+      "excerpt": "Notes on migrating 70% of an engineering org across geographies without losing productivity, morale, or a single client.",
+      "date": "2025-11-02",
+      "readTime": "4 min read",
+      "tags": ["Engineering Leadership"],
+      "imageVersion": 0,
+      "gradient": "from-emerald-400 to-teal-600",
+      "body": "Replace this with your own write-up. This section supports longer-form writing than the Experience bullets above — a good place for lessons learned, frameworks you use, or a deeper dive into a specific initiative."
+    }
   ]
 }

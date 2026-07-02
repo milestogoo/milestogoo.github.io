@@ -3,6 +3,7 @@ import { useContent } from '../context/ContentContext'
 const links = [
   { label: 'Bio', href: '#top' },
   { label: 'Experience', href: '#experience' },
+  { label: 'Articles', href: '#articles' },
   { label: 'Projects', href: '#projects' },
   { label: 'Skills', href: '#skills' },
   { label: 'Contact', href: '#contact' },
