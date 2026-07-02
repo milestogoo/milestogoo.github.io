@@ -171,26 +171,93 @@
   ],
   "articles": [
     {
-      "id": "golden-source-data-platform",
-      "title": "Building a Golden-Source Data Platform",
-      "excerpt": "How we unified fragmented e-commerce data into a single source of truth — and what it took to get engineering and business aligned.",
-      "date": "2026-01-15",
-      "readTime": "5 min read",
-      "tags": ["Data Platforms", "Case Study"],
+      "id": "platform-gap-china",
+      "title": "The Platform Gap: What China Built That We Didn't",
+      "excerpt": "China built platforms, chips, and industrial ecosystems. India built a services economy. A look at what changed — and what it would take to build our own tech stack.",
+      "date": "2025-04-22",
+      "readTime": "3 min read",
+      "tags": ["Technology Policy", "India"],
       "imageVersion": 0,
-      "gradient": "from-violet-400 to-purple-600",
-      "body": "Replace this with your own write-up. Describe the problem, the approach you took, and the outcome — this is a great place to share the story behind an initiative from your Experience section above."
+      "gradient": "from-amber-400 to-orange-600",
+      "sourceUrl": "https://www.linkedin.com/pulse/platform-gap-what-china-built-we-didnt-jesudas-antonyraj-tyscc/",
+      "body": [
+        { "type": "paragraph", "text": "India chose the services route over manufacturing. China focused on core industries, R&D, and platform creation, while India became a global service provider — cheap labour, IT back-office, and customer support." },
+        { "type": "heading", "text": "Dependency vs. Self-Reliance" },
+        { "type": "paragraph", "text": "We import chips, hardware, and tools, then write code on top of them. Meanwhile, China builds the chips, the tools, the infrastructure, and the software." },
+        { "type": "paragraph", "text": "India's policies often favour quick results — outsourcing, foreign investment in services — rather than nurturing long-term tech ecosystems, with little strategic intent to build globally competitive platforms from scratch." },
+        { "type": "heading", "text": "What Needs to Change" },
+        { "type": "list", "items": [
+          "Shift focus from services to a product/platform economy",
+          "Incentivise deep tech, chip design, robotics, and industrial automation",
+          "Government-backed moonshot projects in core sectors",
+          "Encourage youth to build, not just code",
+          "Embed first-principles thinking and engineering rigour in education"
+        ] },
+        { "type": "heading", "text": "Final Thought" },
+        { "type": "paragraph", "text": "We missed the bus, but India doesn't need to catch up — we need to build a better road. We have the brains, the market, the culture, and the drive. What's missing is vision and political-economic will." }
+      ]
     },
     {
-      "id": "leading-through-gcc-migration",
-      "title": "Leading a Team Through a Global Capability Center Migration",
-      "excerpt": "Notes on migrating 70% of an engineering org across geographies without losing productivity, morale, or a single client.",
-      "date": "2025-11-02",
-      "readTime": "4 min read",
-      "tags": ["Engineering Leadership"],
+      "id": "product-engineering-future-of-tech",
+      "title": "How Product Engineering Is Changing the Future of Tech",
+      "excerpt": "The future leans more toward product engineering than traditional software engineering — coding becomes a commodity; solving real problems and execution become the differentiators.",
+      "date": "2025-03-30",
+      "readTime": "1 min read",
+      "tags": ["Product Engineering"],
+      "imageVersion": 0,
+      "gradient": "from-blue-400 to-cyan-600",
+      "sourceUrl": "https://www.linkedin.com/posts/jesudasa_modernengineering-techfuture-ideastoexecution-share-7312143750267355137-a6NC/",
+      "body": [
+        { "type": "paragraph", "text": "The future leans more towards product engineering than traditional software engineering, where coding knowledge becomes a commodity, and products solving real problems and execution are the true differentiators in product development." }
+      ]
+    },
+    {
+      "id": "ai-and-software-engineering",
+      "title": "How AI Can Make Software Engineering More Interesting",
+      "excerpt": "AI isn't coming for engineers' jobs — it's coming for the boring parts. Embracing it means more time for the problems that actually matter.",
+      "date": "2025-03-19",
+      "readTime": "1 min read",
+      "tags": ["AI", "Software Engineering"],
       "imageVersion": 0,
       "gradient": "from-emerald-400 to-teal-600",
-      "body": "Replace this with your own write-up. This section supports longer-form writing than the Experience bullets above — a good place for lessons learned, frameworks you use, or a deeper dive into a specific initiative."
+      "sourceUrl": "https://www.linkedin.com/posts/jesudasa_softwareengineering-ai-futureofwork-share-7307992192524988416-qOzs/",
+      "body": [
+        { "type": "paragraph", "text": "Engineers + AI: Skip the Boring Parts." },
+        { "type": "paragraph", "text": "Let's be real about AI and coding — it's not coming for our jobs, it's coming for the boring parts. We engineers waste over half our time writing repetitive, commodity code that could easily be automated. AI is stepping in to handle that grunt work." },
+        { "type": "paragraph", "text": "This isn't about replacement — it's about elevation. We'll finally have time to focus on the stuff that actually matters: solving interesting problems, designing better systems, and creating genuine value." },
+        { "type": "paragraph", "text": "Embrace the AI revolution. It's not the end of software engineering — it's the beginning of software engineering that doesn't make you want to bang your head against your keyboard." }
+      ]
+    },
+    {
+      "id": "build-vs-buy-vs-hybrid",
+      "title": "Strategic Technology Investment: The Build vs Buy, vs Hybrid Dilemma",
+      "excerpt": "Large IT projects run 45% over budget and deliver 56% less value than predicted. A framework for deciding when to build, buy, or blend — and why leadership churn quietly wrecks more roadmaps than bad technology choices.",
+      "date": "2025-03-13",
+      "readTime": "6 min read",
+      "tags": ["Technology Strategy"],
+      "imageVersion": 0,
+      "gradient": "from-violet-400 to-purple-600",
+      "sourceUrl": "https://www.linkedin.com/pulse/strategic-technology-investment-build-vs-buy-hybrid-jesudas-antonyraj-7kmfc/",
+      "body": [
+        { "type": "paragraph", "text": "Many enterprises are caught in a costly cycle of building products that fail to deliver expected value. The data is stark: large IT projects run 45% over budget and deliver 56% less value than predicted. Only 29% of in-house development projects finish on time and budget, and 19% fail outright." },
+        { "type": "heading", "text": "Leadership Transitions: The Hidden Cost Driver" },
+        { "type": "paragraph", "text": "Nearly 60% of new executives make substantial changes to existing projects within their first six months, regardless of performance — a pattern that costs Fortune 500 companies an estimated $1.5 billion annually in abandoned work." },
+        { "type": "heading", "text": "Build" },
+        { "type": "paragraph", "text": "Best when a capability is a genuine competitive advantage or core IP. Companies that focus engineering effort on differentiating work see 3x higher engineering retention." },
+        { "type": "heading", "text": "Buy" },
+        { "type": "paragraph", "text": "Best for standard, commodity functions. Organizations moving non-core functions to SaaS cut total cost of ownership by 40% over four years; mature vendor management correlates with 23% higher profit margins." },
+        { "type": "heading", "text": "Hybrid" },
+        { "type": "paragraph", "text": "Combines both with clear boundaries — completes initiatives 30% faster and realizes ROI 25% sooner, but integration alone can consume 30-40% of project budgets, and five-year costs are typically underestimated by 40-60%." },
+        { "type": "heading", "text": "The Decision Framework" },
+        { "type": "list", "items": [
+          "Does this capability create competitive differentiation?",
+          "Are robust market solutions available?",
+          "How deeply must it integrate with other systems?",
+          "Will building it create valuable knowledge and engage the team?",
+          "Do we have the sustained commitment to build and maintain it?"
+        ] },
+        { "type": "paragraph", "text": "Organizational alignment breaks down at three junctures: when business defines value without understanding feasibility, when technology pursues perfection without confirming business impact, and when leadership changes direction without respecting institutional knowledge. Organizations allocating more than 55% of their IT budget to differentiating capabilities saw 2.8x higher revenue growth over five years." }
+      ]
     }
   ]
 }

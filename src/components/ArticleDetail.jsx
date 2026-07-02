@@ -1,7 +1,39 @@
 import { useRef } from 'react'
-import { Camera } from 'lucide-react'
+import { Camera, ExternalLink } from 'lucide-react'
 import { useContent } from '../context/ContentContext'
 import Editable from './Editable'
+
+function ArticleBody({ index, body }) {
+  return (
+    <div className="mt-10 border-t border-gray-200 pt-8">
+      {body.map((block, j) => {
+        if (block.type === 'heading') {
+          return (
+            <h2 key={j} className="mt-6 font-serif text-lg font-semibold text-gray-900 first:mt-0">
+              <Editable path={`articles.${index}.body.${j}.text`} />
+            </h2>
+          )
+        }
+        if (block.type === 'list') {
+          return (
+            <ul key={j} className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-gray-700">
+              {block.items.map((_, k) => (
+                <li key={k}>
+                  <Editable path={`articles.${index}.body.${j}.items.${k}`} />
+                </li>
+              ))}
+            </ul>
+          )
+        }
+        return (
+          <p key={j} className="mt-3 text-sm leading-relaxed text-gray-700 first:mt-0">
+            <Editable path={`articles.${index}.body.${j}.text`} as="span" />
+          </p>
+        )
+      })}
+    </div>
+  )
+}
 
 export default function ArticleDetail({ id }) {
   const { content, editMode, getImagePreview, pickImage } = useContent()
@@ -82,12 +114,18 @@ export default function ArticleDetail({ id }) {
         )}
       </div>
 
-      <div className="mt-10 grid gap-2 border-t border-gray-200 pt-8 sm:grid-cols-[140px_1fr]">
-        <h2 className="font-serif text-lg font-semibold text-gray-900">Summary</h2>
-        <p className="text-sm leading-relaxed text-gray-700">
-          <Editable path={`articles.${index}.body`} as="span" />
-        </p>
-      </div>
+      <ArticleBody index={index} body={article.body} />
+
+      {article.sourceUrl && (
+        <a
+          href={article.sourceUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-purple-700 hover:underline"
+        >
+          Read the original post on LinkedIn <ExternalLink size={14} />
+        </a>
+      )}
 
       <div className="mt-10 flex items-start gap-4 rounded-lg border border-gray-200 bg-gray-50 p-5">
         <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-purple-600 text-sm font-semibold text-white">
