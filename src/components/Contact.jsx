@@ -1,6 +1,11 @@
-import { profile } from '../data/portfolio'
+import { useContent } from '../context/ContentContext'
+import Editable from './Editable'
 
 export default function Contact() {
+  const { content, editMode } = useContent()
+  const { profile } = content
+  const guardClick = (e) => editMode && e.preventDefault()
+
   return (
     <section id="contact" className="bg-gradient-to-br from-purple-600 to-indigo-600">
       <div className="mx-auto max-w-3xl px-6 py-16 text-center">
@@ -12,9 +17,10 @@ export default function Contact() {
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
           <a
             href={`mailto:${profile.email}`}
+            onClick={guardClick}
             className="rounded-full bg-white px-6 py-2.5 text-sm font-medium text-purple-700 shadow-sm hover:bg-purple-50"
           >
-            {profile.email}
+            <Editable path="profile.email" />
           </a>
           {profile.socials.map((social) => (
             <a

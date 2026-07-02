@@ -1,4 +1,4 @@
-import { profile } from '../data/portfolio'
+import { useContent } from '../context/ContentContext'
 
 const links = [
   { label: 'Bio', href: '#top' },
@@ -8,12 +8,16 @@ const links = [
   { label: 'Contact', href: '#contact' },
 ]
 
+const resumeUrl = `${import.meta.env.BASE_URL}resume.pdf`
+
 export default function Navbar() {
+  const { content } = useContent()
+
   return (
     <header className="sticky top-0 z-10 border-b border-gray-200 bg-white/90 backdrop-blur">
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         <a href="#top" className="font-semibold text-gray-900">
-          {profile.name}
+          {content.profile.name}
         </a>
         <ul className="hidden gap-6 text-sm text-gray-600 sm:flex">
           {links.map((link) => (
@@ -25,7 +29,7 @@ export default function Navbar() {
           ))}
         </ul>
         <a
-          href={profile.resumeUrl}
+          href={resumeUrl}
           download
           className="rounded-full bg-emerald-500 px-4 py-1.5 text-sm font-medium text-white hover:bg-emerald-400"
         >

@@ -1,11 +1,25 @@
-import { profile, interests, education } from '../data/portfolio'
+import { useRef } from 'react'
+import { useContent } from '../context/ContentContext'
+import Editable from './Editable'
 
-const initials = profile.name
-  .split(' ')
-  .map((part) => part[0])
-  .join('')
+const resumeUrl = `${import.meta.env.BASE_URL}resume.pdf`
 
 export default function Hero() {
+  const { content, editMode, avatarFile, pickAvatarFile } = useContent()
+  const { profile, interests, education } = content
+  const fileInputRef = useRef(null)
+
+  const initials = profile.name
+    .split(' ')
+    .map((part) => part[0])
+    .join('')
+
+  const avatarSrc =
+    avatarFile?.previewUrl ||
+    (profile.avatarVersion > 0
+      ? `${import.meta.env.BASE_URL}avatar.jpg?v=${profile.avatarVersion}`
+      : null)
+
   return (
     <section
       id="top"
@@ -13,12 +27,47 @@ export default function Hero() {
     >
       <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-[280px_1fr]">
         <div className="flex flex-col items-center text-center md:items-start md:text-left">
-          <div className="flex h-28 w-28 items-center justify-center rounded-full bg-purple-600 text-3xl font-semibold text-white shadow-lg ring-4 ring-white">
-            {initials}
+          <div className="relative h-28 w-28">
+            {avatarSrc ? (
+              <img
+                src={avatarSrc}
+                alt={profile.name}
+                className="h-28 w-28 rounded-full object-cover shadow-lg ring-4 ring-white"
+              />
+            ) : (
+              <div className="flex h-28 w-28 items-center justify-center rounded-full bg-purple-600 text-3xl font-semibold text-white shadow-lg ring-4 ring-white">
+                {initials}
+              </div>
+            )}
+            {editMode && (
+              <>
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept="image/*"
+                  className="hidden"
+                  onChange={(e) => e.target.files[0] && pickAvatarFile(e.target.files[0])}
+                />
+                <button
+                  onClick={() => fileInputRef.current.click()}
+                  aria-label="Change photo"
+                  className="absolute bottom-0 right-0 flex h-9 w-9 items-center justify-center rounded-full bg-purple-700 text-white shadow ring-2 ring-white hover:bg-purple-600"
+                >
+                  📷
+                </button>
+              </>
+            )}
           </div>
-          <h1 className="mt-5 text-3xl font-bold text-gray-900">{profile.name}</h1>
-          <p className="mt-1 text-sm text-gray-500">{profile.location}</p>
-          <p className="mt-2 text-sm font-medium text-purple-700">{profile.role}</p>
+
+          <h1 className="mt-5 text-3xl font-bold text-gray-900">
+            <Editable path="profile.name" />
+          </h1>
+          <p className="mt-1 text-sm text-gray-500">
+            <Editable path="profile.location" />
+          </p>
+          <p className="mt-2 text-sm font-medium text-purple-700">
+            <Editable path="profile.role" />
+          </p>
 
           <div className="mt-5 flex gap-2">
             <a
@@ -48,9 +97,11 @@ export default function Hero() {
             <h2 className="flex items-center gap-2 text-lg font-semibold text-gray-900">
               <span className="text-purple-600">◆</span> Professional Summary
             </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-gray-700">{profile.bio}</p>
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-gray-700">
+              <Editable path="profile.bio" as="span" />
+            </p>
             <a
-              href={profile.resumeUrl}
+              href={resumeUrl}
               download
               className="mt-4 inline-block rounded-md bg-purple-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-purple-500"
             >
@@ -63,14 +114,20 @@ export default function Hero() {
               <span className="text-purple-600">◆</span> Education
             </h2>
             <div className="mt-3 grid gap-4 sm:grid-cols-2">
-              {education.map((item) => (
+              {education.map((item, i) => (
                 <div
                   key={item.degree}
                   className="rounded-lg border border-white/60 bg-white/70 p-4 shadow-sm backdrop-blur-sm"
                 >
-                  <p className="text-sm font-semibold text-gray-900">{item.degree}</p>
-                  <p className="mt-1 text-xs text-gray-600">{item.school}</p>
-                  <p className="mt-1 text-xs text-gray-500">{item.period}</p>
+                  <p className="text-sm font-semibold text-gray-900">
+                    <Editable path={`education.${i}.degree`} />
+                  </p>
+                  <p className="mt-1 text-xs text-gray-600">
+                    <Editable path={`education.${i}.school`} />
+                  </p>
+                  <p className="mt-1 text-xs text-gray-500">
+                    <Editable path={`education.${i}.period`} />
+                  </p>
                 </div>
               ))}
             </div>
@@ -81,12 +138,12 @@ export default function Hero() {
               <span className="text-purple-600">◆</span> Interests
             </h2>
             <div className="mt-3 flex flex-wrap gap-2">
-              {interests.map((interest) => (
+              {interests.map((interest, i) => (
                 <span
                   key={interest}
                   className="rounded-full border border-purple-200 bg-white/70 px-3 py-1 text-xs font-medium text-purple-700"
                 >
-                  {interest}
+                  <Editable path={`interests.${i}`} />
                 </span>
               ))}
             </div>
