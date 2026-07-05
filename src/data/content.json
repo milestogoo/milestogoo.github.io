@@ -167,6 +167,18 @@
       "description": "Web calculator that instantly computes loan EMI (equated monthly installment) amounts for personal loans.",
       "tags": ["TypeScript", "React"],
       "href": "https://github.com/milestogoo/plec"
+    },
+    {
+      "title": "SabziFresh",
+      "description": "Mobile-first order management app for a solo vegetable and fruit vendor — customers browse a live catalog and place orders, while the vendor manages products, orders, and payments from a single dashboard, running on SQLite with zero cloud infrastructure.",
+      "tags": ["React", "Express", "SQLite"],
+      "href": "https://github.com/milestogoo/SabziFresh"
+    },
+    {
+      "title": "attri-master",
+      "description": "Product Data Management (PDM) tool for managing product attributes, master data values, and validation rules, with a dashboard for tracking attributes, master data, active rules, and products.",
+      "tags": ["TypeScript", "React", "Vite", "shadcn-ui"],
+      "href": "https://github.com/milestogoo/attri-master"
     }
   ],
   "articles": [
