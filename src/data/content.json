@@ -169,6 +169,18 @@
       "href": "https://github.com/milestogoo/plec"
     },
     {
+      "title": "MyLocal",
+      "description": "Multi-vendor neighborhood marketplace PWA where vendors list products from a shared master catalog and customers order from vendors serving their locality, with a Super Admin console for vendor approvals and catalog management.",
+      "tags": ["JavaScript", "React", "Express", "SQLite"],
+      "href": "https://github.com/milestogoo/MyLocal"
+    },
+    {
+      "title": "TraderPulse",
+      "description": "Real-time multi-asset trading dashboard showing TradingView-style Buy/Sell/Neutral bias across six timeframes, paired with an impact-rated economic calendar and an automatic event-reaction recorder that grades trading playbooks against real price moves.",
+      "tags": ["TypeScript", "Next.js", "SQLite"],
+      "href": "https://github.com/milestogoo/traderpulse"
+    },
+    {
       "title": "SabziFresh",
       "description": "Mobile-first order management app for a solo vegetable and fruit vendor — customers browse a live catalog and place orders, while the vendor manages products, orders, and payments from a single dashboard, running on SQLite with zero cloud infrastructure.",
       "tags": ["React", "Express", "SQLite"],
